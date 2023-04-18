@@ -353,7 +353,13 @@ app.post('/contact', async (req, res) => {
     const { email, message, subject } = req.body;
 
     const toEmail = 'nasirahsan520@gmail.com';
-    const html = `<p>${message + email} </p>`
+    const html = `
+    <div style="width:400px">
+    <p>From: ${email} </p> 
+    <br>
+    <p> ${message}<p>
+    </div>
+    `
     sendEMail(fromEmail = email, toEmail, subject, html)
 
     res.status(200).send({ success: true, message: 'Email sent successfully' })
