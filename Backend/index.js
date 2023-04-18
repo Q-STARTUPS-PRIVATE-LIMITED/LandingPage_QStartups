@@ -513,7 +513,7 @@ app.delete('/api/deletePdf', async (req, res) => {
 
 
             if (!fs.existsSync(resumePath)) {
-                return res.status(404).json("File not found.");
+                res.status(404).json("File not found.");
             }
             fs.unlink(resumePath, async (error) => {
                 if (error) {
