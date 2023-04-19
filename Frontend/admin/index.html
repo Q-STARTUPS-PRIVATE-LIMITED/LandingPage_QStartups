@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <!-- google fonts link here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!-- css file link here -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font awesome link here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .bg_colour {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3798.jpg");
+        }
+
+        .btnTOcopy {
+            background-color: black;
+            color: white;
+            border: 0;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg_colour">
+
+
+
+    <!-- toggle area start here -->
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <!-- toggle area end here -->
+    <nav class="navbar-side">
+
+        <div class="navigation">
+
+            <div class="user-profile">
+                <center>
+                    <div class="user-area">
+                        <a href="../index.html">
+                            <img style="width: 5rem; border-radius: 0;" src="../img/Q-removebg-preview.png" alt="">
+                        </a>
+                    </div>
+                </center>
+            </div>
+
+            <!-- service part start here -->
+            <div class="service-part">
+                <ul class="links">
+                    <li>
+                        <i class="fa-sharp fa-solid fa-user red"></i>
+                        <a class="active" href="./index.html">General</a>
+                    </li>
+
+
+                    <li>
+                        <i class="fa-solid fa-list-ul green"></i>
+                        <a href="./startup.html">Startup</a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-q brown"></i>
+                        <a href="./applicants.html">Applicants</a>
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-user-group blue"></i>
+                        <a href="./mentor.html">Mentor List</a>
+                    </li>
+
+                    <li>
+                        <i class="fa fa-info-circle coral" aria-hidden="true"></i>
+                        <a href="./editdetails.html">Details</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- service part end here -->
+
+            <!-- user log out btn -->
+            <div onclick="handleLogout()" class="log-out">
+                <ul class="user-logout">
+                    <li>
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <a href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+
+
+
+    <!-- header part start here  -->
+    <header class="wrapper">
+
+        <!-- background animation start -->
+        <div class="glowing">
+
+            <span style="--i:1;"></span>
+
+            <span style="--i:2;"></span>
+
+            <span style="--i:3;"></span>
+
+        </div>
+
+        <div class="glowing">
+
+            <span style="--i:1;"></span>
+
+            <span style="--i:2;"></span>
+
+            <span style="--i:3;"></span>
+
+        </div>
+
+        <div class="glowing">
+
+            <span style="--i:1;"></span>
+
+            <span style="--i:2;"></span>
+
+            <span style="--i:3;"></span>
+
+        </div>
+
+        <div class="glowing">
+
+            <span style="--i:1;"></span>
+
+            <span style="--i:2;"></span>
+
+            <span style="--i:3;"></span>
+
+        </div>
+        <!-- background animation end -->
+
+        <div class="inner-width">
+
+            <div class="profile">
+
+                <div class="user-name">
+
+                    <h2>Admin Panel</h2> &nbsp; &nbsp;
+                </div>
+
+            </div>
+
+            <div class="work-space">
+                <div class="work-heading">
+                    <h2>Users</h2>
+                </div>
+                <div class="card-wrap">
+                    <div class="card">
+                        <div class="dp-part">
+                            <div class="text-part">
+                                <p>subscribed Users</p>
+                                <p id="subscribed">loading..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="dp-part">
+                            <div class="text-part">
+                                <p>SignUp</p>
+                                <p id="signUp">loading..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="dp-part">
+                            <div class="text-part">
+                                <p>Registered People</p>
+                                <p id="registerd">loading..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="dp-part">
+                            <div class="text-part">
+                                <p>Startups</p>
+                                <p id="startUp">loading..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="dp-part">
+                            <div class="text-part">
+                                <p>Mentors</p>
+                                <p id="mentor">loading..</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                        
+                        <div class="card">
+                            <div class="font-icon">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>Add admin</p>
+                            </div>
+                            
+                        </div>
+                    -->
+                </div>
+                <div class="work-heading" style="display: block;">
+                    <h2>Emails for sending newsletter</h2>
+                    <div id="subscribed email"></div>
+                    <div style="display: flex; justify-content: center;">
+                        <textarea class="txtarea" id="copyText"> loading all emails...</textarea>
+                        <br>
+                        <button class="btnTOcopy" id="copyBtn" onclick="copy()">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        const handleLogout = () => {
+            localStorage.removeItem('currentUser')
+            window.location.href = '/login.html'
+
+        }
+    </script>
+
+
+    <!-- header part end here  -->
+    <script>
+        function copy() {
+            let textarea = document.getElementById("copyText");
+            textarea.select();
+            document.execCommand("copy");
+            document.querySelector('#copyBtn').textContent = 'copied'
+        }
+    </script>
+
+    <!-- general script connection -->
+
+    <script src="../js/Admin.js/GeneralAdmin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicants</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- TABLE LINKS -->
+  <!---------- CHECK ASSETS ONCE IT has JS files MAY include Backend ALSO --------------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!--  toastify  -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <style>
+    .bg_colour {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-3798.jpg");
+    }
+  </style>
+</head>
+
+<body class="bg_colour">
+
+  <!-- toggle area start here -->
+  <input type="checkbox" id="check">
+  <label for="check">
+    <i class="fas fa-bars" id="btn"></i>
+    <i class="fas fa-times" id="cancel"></i>
+  </label>
+  <!-- toggle area end here -->
+
+  <nav class="navbar-side">
+
+    <div class="navigation">
+
+      <div class="user-profile">
+        <center>
+          <div class="user-area">
+            <a href="../index.html">
+              <img style="width: 5rem; border-radius: 0;" src="../img/Q-removebg-preview.png" alt="">
+            </a>
+          </div>
+        </center>
+      </div>
+
+      <!-- service part start here -->
+      <div class="service-part">
+        <ul class="links">
+          <li>
+            <i class="fa-sharp fa-solid fa-user red"></i>
+            <a href="./index.html">General</a>
+          </li>
+
+
+          <li>
+            <i class="fa-solid fa-list-ul green"></i>
+            <a href="./startup.html">Startup</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-q brown"></i>
+            <a class="active" href="./aplicants.html">Applicants</a>
+          </li>
+
+          <li>
+            <i class="fa-solid fa-user-group blue"></i>
+            <a href="./mentor.html">Mentor List</a>
+          </li>
+          <li>
+            <i class="fa fa-info-circle coral" aria-hidden="true"></i>
+            <!-- <a href="./editdetails.html">Details</a> -->
+            <a href="./editdetails.html">Details</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- service part end here -->
+
+      <!-- user log out btn -->
+      <div class="log-out">
+        <ul class="user-logout">
+          <li onclick="handleLogout()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <div class="glowing">
+
+    <span style="--i:1;"></span>
+
+    <span style="--i:2;"></span>
+
+    <span style="--i:3;"></span>
+
+  </div>
+
+  <div class="glowing">
+
+    <span style="--i:1;"></span>
+
+    <span style="--i:2;"></span>
+
+    <span style="--i:3;"></span>
+
+  </div>
+
+  <!-- background animation start -->
+  <div class="glowing">
+
+    <span style="--i:1;"></span>
+
+    <span style="--i:2;"></span>
+
+    <span style="--i:3;"></span>
+
+  </div>
+
+  <div class="glowing">
+
+    <span style="--i:1;"></span>
+
+    <span style="--i:2;"></span>
+
+    <span style="--i:3;"></span>
+
+  </div>
+
+  <div class="glowing">
+
+    <span style="--i:1;"></span>
+
+    <span style="--i:2;"></span>
+
+    <span style="--i:3;"></span>
+
+  </div>
+
+  <div class="glowing">
+
+    <span style="--i:1;"></span>
+
+    <span style="--i:2;"></span>
+
+    <span style="--i:3;"></span>
+
+  </div>
+  <!-- background animation end -->
+
+
+  <div class="wrapper">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-11 col-md-offset-2">
+          <div class="description">
+            <h2>Career Applicants List</h2>
+          </div>
+
+          <div class="documents">
+            <table
+              style="width:100%; border: 1px solid black; margin-top: 1rem; padding: 0px, 10px; text-align: center;">
+              <thead style="border: 1px solid black; ">
+                <th style="text-align: center;">Name</th>
+                <th style="text-align: center;">Email</th>
+                <th style="text-align: center;">download Resume / Remove</th>
+                <th style="text-align: center;">download cv / Remove</th>
+                <th style="text-align: center;">Job Type</th>
+                <!-----------------Sort BY date applied------------------>
+                <th style="text-align: center;">Date Applied [d/m/y]</th>
+              </thead>
+              <tbody id="aplicantTbody">
+
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const handleLogout = () => {
+      localStorage.removeItem('currentUser')
+      window.location.href = '/login.html'
+
+    }
+  </script>
+  <script src="../js/Admin.js/startupHandle2.js"></script>
+  <script src="../js/Admin.js/Aplicants.js"></script>
+</body>
+
+
+</html>
